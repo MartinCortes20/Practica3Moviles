@@ -1,8 +1,8 @@
 package com.escom.practica3moviles.data.local.dao
 import androidx.room.*
-import com.practica3moviles.data.local.entities.FavoriteEntity
-import com.practica3moviles.data.local.entities.RecentFileEntity
-import com.practica3moviles.data.local.entities.ThumbnailCacheEntity
+import com.escom.practica3moviles.data.local.entities.FavoriteEntity
+import com.escom.practica3moviles.data.local.entities.RecentFileEntity
+import com.escom.practica3moviles.data.local.entities.ThumbnailCacheEntity
 import kotlinx.coroutines.flow.Flow
 
 /**

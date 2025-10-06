@@ -1,6 +1,6 @@
 package com.escom.practica3moviles.data.repository
 
-import com.practica3moviles.domain.model.FileItem
+import com.escom.practica3moviles.domain.model.FileItem
 import kotlinx.coroutines.flow.Flow
 
 

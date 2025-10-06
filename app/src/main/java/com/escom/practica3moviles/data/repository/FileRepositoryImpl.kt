@@ -2,9 +2,9 @@ package com.escom.practica3moviles.data.repository
 
 import android.os.Environment
 import android.os.StatFs
-import com.practica3moviles.domain.model.FileItem
-import com.practica3moviles.domain.repository.FileRepository
-import com.practica3moviles.domain.repository.StorageInfo
+import com.escom.practica3moviles.domain.model.FileItem
+import com.escom.practica3moviles.domain.repository.FileRepository
+import com.escom.practica3moviles.domain.repository.StorageInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

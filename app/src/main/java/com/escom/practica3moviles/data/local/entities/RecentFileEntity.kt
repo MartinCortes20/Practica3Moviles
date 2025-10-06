@@ -3,7 +3,7 @@ package com.escom.practica3moviles.data.local.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
-import com.practica3moviles.domain.model.FileItem
+import com.escom.practica3moviles.domain.model.FileItem
 import java.util.Date
 /**
  * Entidad de Room para almacenar historial de archivos recientes

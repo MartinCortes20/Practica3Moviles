@@ -5,13 +5,13 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.practica3moviles.data.local.dao.FavoriteDao
-import com.practica3moviles.data.local.dao.RecentFileDao
-import com.practica3moviles.data.local.dao.ThumbnailCacheDao
-import com.practica3moviles.data.local.entities.Converters
-import com.practica3moviles.data.local.entities.FavoriteEntity
-import com.practica3moviles.data.local.entities.RecentFileEntity
-import com.practica3moviles.data.local.entities.ThumbnailCacheEntity
+import com.escom.practica3moviles.data.local.dao.FavoriteDao
+import com.escom.practica3moviles.data.local.dao.RecentFileDao
+import com.escom.practica3moviles.data.local.dao.ThumbnailCacheDao
+import com.escom.practica3moviles.data.local.entities.Converters
+import com.escom.practica3moviles.data.local.entities.FavoriteEntity
+import com.escom.practica3moviles.data.local.entities.RecentFileEntity
+import com.escom.practica3moviles.data.local.entities.ThumbnailCacheEntity
 
 /**
  * Base de datos principal de la aplicación usando Room

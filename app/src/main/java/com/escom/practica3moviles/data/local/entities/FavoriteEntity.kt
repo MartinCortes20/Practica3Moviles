@@ -2,7 +2,7 @@ package com.escom.practica3moviles.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.practica3moviles.domain.model.FileItem
+import com.escom.practica3moviles.domain.model.FileItem
 
 /**
  * Entidad de Room para almacenar archivos favoritos
