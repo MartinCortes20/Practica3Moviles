@@ -78,10 +78,17 @@ public struct FileExplorerView: View {
                                     onFavorite: {
                                         toggleFavorite(item)
                                     },
+                                    onCopy: {  // ✅ NUEVO
+                                        // Necesitarás agregar los mismos estados en FolderContentView
+                                        print("Copiar \(item.name)")
+                                    },
+                                    onMove: {  // ✅ NUEVO
+                                        // Necesitarás agregar los mismos estados en FolderContentView
+                                        print("Mover \(item.name)")
+                                    },
                                     isFavorite: favoritesVM.isFavorite(item)
                                 )
-                            }
-                            .swipeActions(edge: .trailing) {
+                            }                            .swipeActions(edge: .trailing) {
                                 // Swipe para eliminar
                                 Button(role: .destructive) {
                                     operationsVM.showDeleteConfirmation(for: item)
@@ -561,15 +568,29 @@ struct FileContextMenu: View {
     let onDelete: () -> Void
     let onShare: () -> Void
     let onFavorite: () -> Void
+    let onCopy: () -> Void  // ✅ NUEVO
+    let onMove: () -> Void  // ✅ NUEVO
     let isFavorite: Bool
     @StateObject private var themeManager = ThemeManager.shared
     
     var body: some View {
         Group {
+            // ✅ COMPARTIR
             Button(action: onShare) {
                 Label("Compartir", systemImage: "square.and.arrow.up")
             }
             
+            // ✅ COPIAR - Nuevo
+            Button(action: onCopy) {
+                Label("Copiar", systemImage: "doc.on.doc")
+            }
+            
+            // ✅ MOVER - Nuevo
+            Button(action: onMove) {
+                Label("Mover", systemImage: "folder")
+            }
+            
+            // ✅ FAVORITOS - Solo para archivos, no carpetas
             if !fileItem.isDirectory {
                 Button(action: onFavorite) {
                     Label(
@@ -582,10 +603,12 @@ struct FileContextMenu: View {
             
             Divider()
             
+            // ✅ RENOMBRAR
             Button(action: onRename) {
                 Label("Renombrar", systemImage: "pencil")
             }
             
+            // ✅ ELIMINAR
             Button(role: .destructive, action: onDelete) {
                 Label("Eliminar", systemImage: "trash")
             }

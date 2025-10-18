@@ -11,20 +11,26 @@ public struct FileListView: View {
     let fileItems: [FileItem]
     let onFolderTap: (FileItem) -> Void
     let onFileTap: (FileItem) -> Void
-    let onFavorite: (FileItem) -> Void  // ✅ NUEVO: Callback para favoritos
-    let isFavorite: (FileItem) -> Bool  // ✅ NUEVO: Función para verificar si es favorito
+    let onFavorite: (FileItem) -> Void
+    let onCopy: (FileItem) -> Void  // ✅ NUEVO: Callback para copiar
+    let onMove: (FileItem) -> Void  // ✅ NUEVO: Callback para mover
+    let isFavorite: (FileItem) -> Bool
     
     public init(
         fileItems: [FileItem],
         onFolderTap: @escaping (FileItem) -> Void,
         onFileTap: @escaping (FileItem) -> Void,
-        onFavorite: @escaping (FileItem) -> Void,  // ✅ NUEVO
-        isFavorite: @escaping (FileItem) -> Bool   // ✅ NUEVO
+        onFavorite: @escaping (FileItem) -> Void,
+        onCopy: @escaping (FileItem) -> Void,  // ✅ NUEVO
+        onMove: @escaping (FileItem) -> Void,  // ✅ NUEVO
+        isFavorite: @escaping (FileItem) -> Bool
     ) {
         self.fileItems = fileItems
         self.onFolderTap = onFolderTap
         self.onFileTap = onFileTap
         self.onFavorite = onFavorite
+        self.onCopy = onCopy  // ✅ NUEVO
+        self.onMove = onMove  // ✅ NUEVO
         self.isFavorite = isFavorite
     }
     
@@ -44,10 +50,16 @@ public struct FileListView: View {
                             onShare: {
                                 print("Compartir: \(item.name)")
                             },
-                            onFavorite: {  // ✅ NUEVO: Pasar el callback
+                            onFavorite: {
                                 onFavorite(item)
                             },
-                            isFavorite: isFavorite(item)  // ✅ NUEVO: Pasar el estado
+                            onCopy: {  // ✅ NUEVO: Pasar el callback
+                                onCopy(item)
+                            },
+                            onMove: {  // ✅ NUEVO: Pasar el callback
+                                onMove(item)
+                            },
+                            isFavorite: isFavorite(item)
                         )
                     }
                     .draggable(item)

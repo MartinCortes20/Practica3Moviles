@@ -144,10 +144,16 @@ struct FolderContentView: View {
     @State private var showingFilters = false
     @State private var selectedFile: FileItem?
     
+    // ✅ NUEVOS ESTADOS PARA COPIAR/MOVER
+    @State private var showingCopyDialog = false
+    @State private var showingMoveDialog = false
+    @State private var operationItem: FileItem?
+    
     // ✅ NUEVO: Operations VM para esta vista
     @StateObject private var operationsVM = FileOperationsViewModel(fileRepository: LocalFileRepository())
     @StateObject private var sharingVM = FileSharingViewModel()
     @StateObject private var favoritesVM = FavoritesViewModel()
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -194,19 +200,27 @@ struct FolderContentView: View {
                         .contextMenu {
                             FileContextMenu(
                                 fileItem: item,
-                                onRename: {
-                                    operationsVM.showRenameDialog(for: item)
-                                },
-                                onDelete: {
-                                    operationsVM.showDeleteConfirmation(for: item)
-                                },
-                                onShare: {
-                                    sharingVM.shareFile(item)
-                                },
-                                onFavorite: {
-                                    toggleFavorite(item)
-                                },
-                                isFavorite: favoritesVM.isFavorite(item)
+                                    onRename: {
+                                        operationsVM.showRenameDialog(for: item)
+                                    },
+                                    onDelete: {
+                                        operationsVM.showDeleteConfirmation(for: item)
+                                    },
+                                    onShare: {
+                                        sharingVM.shareFile(item)
+                                    },
+                                    onFavorite: {
+                                        toggleFavorite(item)
+                                    },
+                                    onCopy: {
+                                        operationItem = item
+                                        showingCopyDialog = true
+                                    },
+                                    onMove: {
+                                        operationItem = item
+                                        showingMoveDialog = true
+                                    },
+                                    isFavorite: favoritesVM.isFavorite(item)
                             )
                         }
                     }
@@ -216,7 +230,7 @@ struct FolderContentView: View {
         }
         .navigationTitle(folderName)
         .toolbar {
-            // ✅ AGREGAR TOOLBAR TAMBIÉN EN SUBCARPETAS
+            
             ToolbarItem(placement: .navigationBarTrailing) {
                 Menu {
                     Button(action: {
