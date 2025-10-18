@@ -20,6 +20,8 @@ public struct FileExplorerView: View {
     @State private var showingFilters = false
     @State private var showingFavorites = false
     @State private var showingRecents = false
+    @State private var isGridView: Bool = false
+    @State private var showingAdvancedSearch = false
     
     // ✅ INIT SIMPLIFICADO - SOLO RECIBE fileRepository
     public init(fileRepository: FileRepositoryProtocol) {
@@ -57,79 +59,84 @@ public struct FileExplorerView: View {
                 } else if viewModel.fileItems.isEmpty {
                     EmptyStateView(isSearching: viewModel.isSearching)
                 } else {
-                    List {
-                        ForEach(viewModel.fileItems) { item in
-                            // ✅ ACTUALIZAR FileItemView PARA USAR EnvironmentObject
-                            FileItemView(fileItem: item, onFileTap: { file in
-                                handleItemTap(file)
-                            })
-                            .contextMenu {
-                                FileContextMenu(
-                                    fileItem: item,
-                                    onRename: {
-                                        operationsVM.showRenameDialog(for: item)
-                                    },
-                                    onDelete: {
-                                        operationsVM.showDeleteConfirmation(for: item)
-                                    },
-                                    onShare: {
-                                        sharingVM.shareFile(item)
-                                    },
-                                    onFavorite: {
-                                        toggleFavorite(item)
-                                    },
-                                    onCopy: {  // ✅ NUEVO
-                                        // Necesitarás agregar los mismos estados en FolderContentView
-                                        print("Copiar \(item.name)")
-                                    },
-                                    onMove: {  // ✅ NUEVO
-                                        // Necesitarás agregar los mismos estados en FolderContentView
-                                        print("Mover \(item.name)")
-                                    },
-                                    isFavorite: favoritesVM.isFavorite(item)
-                                )
-                            }                            .swipeActions(edge: .trailing) {
-                                // Swipe para eliminar
-                                Button(role: .destructive) {
-                                    operationsVM.showDeleteConfirmation(for: item)
-                                } label: {
-                                    Label("Eliminar", systemImage: "trash")
-                                }
-                                
-                                // Swipe para favoritos
-                                Button {
-                                    toggleFavorite(item)
-                                } label: {
-                                    Label(
-                                        favoritesVM.isFavorite(item) ? "Quitar" : "Favorito",
-                                        systemImage: favoritesVM.isFavorite(item) ? "star.slash" : "star"
+                    // ✅ TOGGLE ENTRE VISTA LISTA Y CUADRÍCULA
+                    if isGridView {
+                        GridFileView(files: viewModel.fileItems, onFileTap: { file in
+                            handleItemTap(file)
+                        })
+                    } else {
+                        List {
+                            ForEach(viewModel.fileItems) { item in
+                                FileItemView(fileItem: item, onFileTap: { file in
+                                    handleItemTap(file)
+                                })
+                                .contextMenu {
+                                    FileContextMenu(
+                                        fileItem: item,
+                                        onRename: {
+                                            operationsVM.showRenameDialog(for: item)
+                                        },
+                                        onDelete: {
+                                            operationsVM.showDeleteConfirmation(for: item)
+                                        },
+                                        onShare: {
+                                            sharingVM.shareFile(item)
+                                        },
+                                        onFavorite: {
+                                            toggleFavorite(item)
+                                        },
+                                        onCopy: {
+                                            print("Copiar \(item.name)")
+                                        },
+                                        onMove: {
+                                            print("Mover \(item.name)")
+                                        },
+                                        isFavorite: favoritesVM.isFavorite(item)
                                     )
                                 }
-                                .tint(.yellow)
-                            }
-                            .swipeActions(edge: .leading) {
-                                // Swipe para compartir
-                                Button {
-                                    sharingVM.shareFile(item)
-                                } label: {
-                                    Label("Compartir", systemImage: "square.and.arrow.up")
+                                .swipeActions(edge: .trailing) {
+                                    // Swipe para eliminar
+                                    Button(role: .destructive) {
+                                        operationsVM.showDeleteConfirmation(for: item)
+                                    } label: {
+                                        Label("Eliminar", systemImage: "trash")
+                                    }
+                                    
+                                    // Swipe para favoritos
+                                    Button {
+                                        toggleFavorite(item)
+                                    } label: {
+                                        Label(
+                                            favoritesVM.isFavorite(item) ? "Quitar" : "Favorito",
+                                            systemImage: favoritesVM.isFavorite(item) ? "star.slash" : "star"
+                                        )
+                                    }
+                                    .tint(.yellow)
                                 }
-                                .tint(.blue)
-                                
-                                // Swipe para renombrar
-                                Button {
-                                    operationsVM.showRenameDialog(for: item)
-                                } label: {
-                                    Label("Renombrar", systemImage: "pencil")
+                                .swipeActions(edge: .leading) {
+                                    // Swipe para compartir
+                                    Button {
+                                        sharingVM.shareFile(item)
+                                    } label: {
+                                        Label("Compartir", systemImage: "square.and.arrow.up")
+                                    }
+                                    .tint(.blue)
+                                    
+                                    // Swipe para renombrar
+                                    Button {
+                                        operationsVM.showRenameDialog(for: item)
+                                    } label: {
+                                        Label("Renombrar", systemImage: "pencil")
+                                    }
+                                    .tint(.green)
                                 }
-                                .tint(.green)
                             }
                         }
-                    }
-                    .listStyle(PlainListStyle())
-                    .refreshable {
-                        // Pull to refresh
-                        viewModel.loadContents()
+                        .listStyle(PlainListStyle())
+                        .refreshable {
+                            // Pull to refresh
+                            viewModel.loadContents()
+                        }
                     }
                 }
             }
@@ -162,10 +169,20 @@ public struct FileExplorerView: View {
                             Label("Nueva Carpeta", systemImage: "folder.badge.plus")
                         }
                         
+                        // ✅ BOTÓN PARA BÚSQUEDA AVANZADA
                         Button(action: {
-                            // Cambiar vista (lista/cuadrícula)
+                            showingAdvancedSearch = true
                         }) {
-                            Label("Cambiar Vista", systemImage: "square.grid.2x2")
+                            Label("Búsqueda Avanzada", systemImage: "magnifyingglass")
+                        }
+                        
+                        Button(action: {
+                            isGridView.toggle()
+                        }) {
+                            Label(
+                                isGridView ? "Vista lista" : "Vista cuadrícula",
+                                systemImage: isGridView ? "list.bullet" : "square.grid.2x2"
+                            )
                         }
                         
                         Divider()
@@ -227,6 +244,12 @@ public struct FileExplorerView: View {
             .sheet(item: $sharingVM.shareSheetItem) { item in
                 ShareSheet(activityItems: [item.url])
             }
+            .sheet(isPresented: $showingAdvancedSearch) {
+                AdvancedSearchView(
+                    isPresented: $showingAdvancedSearch,
+                    viewModel: viewModel  // ✅ Pasar el viewModel completo
+                )
+            }
             .alert("Error", isPresented: .constant(operationsVM.operationError != nil)) {
                 Button("OK") { operationsVM.operationError = nil }
             } message: {
@@ -241,6 +264,8 @@ public struct FileExplorerView: View {
         }
         .accentColor(themeManager.currentTheme.primaryColor)
     }
+    
+    // ✅ TODAS LAS FUNCIONES PRIVADAS DEBEN ESTAR FUERA DEL body
     
     private func handleItemTap(_ item: FileItem) {
         print("=== 🖱️ HANDLE ITEM TAP ===")
@@ -663,7 +688,7 @@ struct ThemePickerView: View {
                 }
             }
         } label: {
-            Image(systemName: "paintpalette")
+            Label("Tema", systemImage: "paintpalette")
         }
     }
 }

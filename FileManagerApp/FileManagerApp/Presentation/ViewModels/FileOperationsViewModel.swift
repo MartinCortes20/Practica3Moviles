@@ -152,4 +152,7 @@ public final class FileOperationsViewModel: ObservableObject {
         selectedItem = item
         showDeleteConfirmation = true
     }
+    
+    
+    
 }
