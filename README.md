@@ -1,10 +1,5 @@
 📁 FileManager App - Gestor de Archivos
 <div align="center">
-https://img.shields.io/badge/Swift-5.0-orange.svg
-https://img.shields.io/badge/iOS-15.0+-blue.svg
-https://img.shields.io/badge/SwiftUI-3.0+-green.svg
-https://img.shields.io/badge/Platform-iOS-lightgrey.svg
-
 Una aplicación moderna de gestión de archivos desarrollada en SwiftUI con arquitectura MVVM
 
 </div>
@@ -74,28 +69,46 @@ Caché optimizado para miniaturas
 Ejemplo de estructura:
 
 text
-📸 Capturas de Pantalla
+## 📸 Capturas de Pantalla
 
-<img width="590" height="1278" alt="IMG_0184" src="https://github.com/user-attachments/assets/1feae405-bbfa-4cc7-a03e-ef2247054caf" />
-<img width="590" height="1278" alt="IMG_0183" src="https://github.com/user-attachments/assets/04913e53-d6db-4251-9cfd-084edd29afcc" />
-<img width="590" height="1278" alt="IMG_0182" src="https://github.com/user-attachments/assets/66ac0bdd-b2aa-46cd-85fd-73f21cfdbb8b" />
-<img width="590" height="1278" alt="IMG_0181" src="https://github.com/user-attachments/assets/484a6622-8b0a-4150-b4b1-cced576d24d6" />
-<img width="590" height="1278" alt="IMG_0180" src="https://github.com/user-attachments/assets/3acddebd-2a88-4b1d-a24c-919e8b56b171" />
-<img width="590" height="1278" alt="IMG_0179" src="https://github.com/user-attachments/assets/45838ca5-f75b-44f9-99f2-821694316579" />
-<img width="590" height="1278" alt="IMG_0178" src="https://github.com/user-attachments/assets/a62446ce-e1d6-45df-a212-13f761d4bf99" />
-<img width="590" height="1278" alt="IMG_0177" src="https://github.com/user-attachments/assets/8af71a4c-2fc2-42dd-9626-362b143d4b00" />
-<img width="590" height="1278" alt="IMG_0176" src="https://github.com/user-attachments/assets/cb6bba1f-8192-4ec0-b737-d2f0be03d38e" />
-<img width="590" height="1278" alt="IMG_0175" src="https://github.com/user-attachments/assets/4f286e60-c960-4bba-8c62-3e9103a44d52" />
-<img width="590" height="1278" alt="IMG_0174" src="https://github.com/user-attachments/assets/c947a482-c1e0-4a76-aa50-80d12ca88d07" />
-<img width="590" height="1278" alt="IMG_0173" src="https://github.com/user-attachments/assets/36ca4dad-1b73-4f3d-b439-410d94f8a7d8" />
-<img width="590" height="1278" alt="IMG_0172" src="https://github.com/user-attachments/assets/764fbf7d-0adb-4542-86cf-c1b88b616d43" />
-<img width="590" height="1278" alt="IMG_0171" src="https://github.com/user-attachments/assets/a112b540-d004-4a27-acde-d73c71d91b0e" />
-<img width="590" height="1278" alt="IMG_0170" src="https://github.com/user-attachments/assets/dea7f822-7cd7-4e7b-ba30-52e26117feb5" />
-<img width="590" height="1278" alt="IMG_0169" src="https://github.com/user-attachments/assets/613a5ce4-3ff7-4841-a1b1-d78c29371f1d" />
-<img width="590" height="1278" alt="IMG_0168" src="https://github.com/user-attachments/assets/ad110c1f-2dea-4a02-b267-8f003dd6cf66" />
-<img width="590" height="1278" alt="IMG_0167" src="https://github.com/user-attachments/assets/7793bf92-ec86-4a3e-8af9-c4bd000a3488" />
-<img width="590" height="1278" alt="IMG_0166" src="https://github.com/user-attachments/assets/23759d51-9f8c-4b5a-ba34-25c6c04f06d4" />
-<img width="590" height="1278" alt="IMG_0165" src="https://github.com/user-attachments/assets/9c914fc3-d96b-4751-a4f0-a2eca83ac53a" />
+<div align="center">
+
+### Vista Principal y Navegación
+<img width="280" src="https://github.com/user-attachments/assets/9c914fc3-d96b-4751-a4f0-a2eca83ac53a" alt="Vista Principal - IMG_0165" />
+<img width="280" src="https://github.com/user-attachments/assets/23759d51-9f8c-4b5a-ba34-25c6c04f06d4" alt="Navegación Carpetas - IMG_0166" />
+<img width="280" src="https://github.com/user-attachments/assets/7793bf92-ec86-4a3e-8af9-c4bd000a3488" alt="Contenido Carpeta - IMG_0167" />
+
+### Vista Cuadrícula y Detalles
+<img width="280" src="https://github.com/user-attachments/assets/ad110c1f-2dea-4a02-b267-8f003dd6cf66" alt="Vista Cuadrícula - IMG_0168" />
+<img width="280" src="https://github.com/user-attachments/assets/613a5ce4-3ff7-4841-a1b1-d78c29371f1d" alt="Detalles Archivo - IMG_0169" />
+<img width="280" src="https://github.com/user-attachments/assets/dea7f822-7cd7-4e7b-ba30-52e26117feb5" alt="Información Detallada - IMG_0170" />
+
+### Búsqueda y Filtros
+<img width="280" src="https://github.com/user-attachments/assets/a112b540-d004-4a27-acde-d73c71d91b0e" alt="Búsqueda Simple - IMG_0171" />
+<img width="280" src="https://github.com/user-attachments/assets/764fbf7d-0adb-4542-86cf-c1b88b616d43" alt="Filtro por Tipo - IMG_0172" />
+<img width="280" src="https://github.com/user-attachments/assets/36ca4dad-1b73-4f3d-b439-410d94f8a7d8" alt="Búsqueda Avanzada - IMG_0173" />
+
+### Gestión de Archivos
+<img width="280" src="https://github.com/user-attachments/assets/c947a482-c1e0-4a76-aa50-80d12ca88d07" alt="Menú Contextual - IMG_0174" />
+<img width="280" src="https://github.com/user-attachments/assets/4f286e60-c960-4bba-8c62-3e9103a44d52" alt="Operaciones Archivo - IMG_0175" />
+<img width="280" src="https://github.com/user-attachments/assets/cb6bba1f-8192-4ec0-b737-d2f0be03d38e" alt="Diálogo Renombrar - IMG_0176" />
+
+### Visualización
+<img width="280" src="https://github.com/user-attachments/assets/8af71a4c-2fc2-42dd-9626-362b143d4b00" alt="Visor de Imágenes - IMG_0177" />
+<img width="280" src="https://github.com/user-attachments/assets/a62446ce-e1d6-45df-a212-13f761d4bf99" alt="Zoom Imagen - IMG_0178" />
+<img width="280" src="https://github.com/user-attachments/assets/45838ca5-f75b-44f9-99f2-821694316579" alt="Visor de Texto - IMG_0179" />
+
+### Características Avanzadas
+<img width="280" src="https://github.com/user-attachments/assets/3acddebd-2a88-4b1d-a24c-919e8b56b171" alt="Favoritos - IMG_0180" />
+<img width="280" src="https://github.com/user-attachments/assets/484a6622-8b0a-4150-b4b1-cced576d24d6" alt="Archivos Recientes - IMG_0181" />
+<img width="280" src="https://github.com/user-attachments/assets/66ac0bdd-b2aa-46cd-85fd-73f21cfdbb8b" alt="Tema IPN - IMG_0182" />
+
+### Personalización
+<img width="280" src="https://github.com/user-attachments/assets/04913e53-d6db-4251-9cfd-084edd29afcc" alt="Tema ESCOM - IMG_0183" />
+<img width="280" src="https://github.com/user-attachments/assets/1feae405-bbfa-4cc7-a03e-ef2247054caf" alt="Selector Temas - IMG_0184" />
+
+</div>
+
 
 
 
