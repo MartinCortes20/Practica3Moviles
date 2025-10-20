@@ -1,9 +1,9 @@
-📁 FileManager App - Gestor de Archivos
+# 📁 FileManager App - Gestor de Archivos
 <div align="center">
 Una aplicación moderna de gestión de archivos desarrollada en SwiftUI con arquitectura MVVM
 
 </div>
-📋 Tabla de Contenidos
+## 📋 Tabla de Contenidos
 Características
 
 Capturas de Pantalla
@@ -22,8 +22,8 @@ Contribución
 
 Licencia
 
-✨ Características
-🗂️ Gestión de Archivos
+## ✨ Características
+### 🗂️ Gestión de Archivos
 Exploración jerárquica de directorios internos y externos
 
 Vista dual: Lista y Cuadrícula
@@ -34,7 +34,7 @@ Operaciones completas: crear, renombrar, copiar, mover, eliminar
 
 Búsqueda avanzada por nombre, tipo y fecha
 
-👁️ Visualización
+### 👁️ Visualización
 Visor de imágenes con zoom, desplazamiento y rotación
 
 Visor de texto para .txt, .md, .log, .json, .xml
@@ -43,7 +43,7 @@ Apertura externa para archivos no soportados
 
 Miniaturas en caché para mejor rendimiento
 
-🎨 Interfaz de Usuario
+### 🎨 Interfaz de Usuario
 Temas personalizables: IPN (#6B2E5F) y ESCOM (#003D6D)
 
 Diseño responsivo para todos los tamaños de pantalla
@@ -54,7 +54,7 @@ Iconos diferenciados por tipo de archivo
 
 Modo claro/oscuro automático
 
-💾 Almacenamiento Local
+### 💾 Almacenamiento Local
 Historial de archivos recientes
 
 Sistema de favoritos persistente
@@ -63,12 +63,6 @@ Búsqueda inteligente con filtros múltiples
 
 Caché optimizado para miniaturas
 
-📸 Capturas de Pantalla
-(Aquí puedes agregar tus capturas de pantalla)
-
-Ejemplo de estructura:
-
-text
 ## 📸 Capturas de Pantalla
 
 <div align="center">
@@ -110,9 +104,7 @@ text
 </div>
 
 
-
-
-🛠️ Tecnologías
+## 🛠️ Tecnologías
 Lenguaje: Swift 5.0
 
 UI Framework: SwiftUI 3.0+
@@ -125,22 +117,22 @@ Mínima Versión: iOS 15.0+
 
 Gestión de Dependencias: Swift Package Manager
 
-🏗️ Arquitectura
+## 🏗️ Arquitectura
 MVVM Pattern
-text
-📱 View (SwiftUI)
+
+## 📱 View (SwiftUI)
     ├── FileExplorerView
     ├── FileItemView
     ├── FolderContentView
     └── Componentes Reutilizables
 
-🔄 ViewModel (ObservableObject)
+## 🔄 ViewModel (ObservableObject)
     ├── FileExplorerViewModel
     ├── FavoritesViewModel
     ├── RecentFilesViewModel
     └── FileOperationsViewModel
 
-📦 Model
+## 📦 Model
     ├── FileItem
     ├── FileType
     ├── Repositories
@@ -156,7 +148,7 @@ Principios SOLID
 
 ✅ Dependency Inversion: Dependencias inyectadas via protocolos
 
-📥 Instalación
+## 📥 Instalación
 Requisitos
 Xcode 13.0+
 
@@ -178,7 +170,7 @@ Configura el team de desarrollo en Signing & Capabilities
 
 Compila y ejecuta (⌘ + R)
 
-🚀 Uso
+## 🚀 Uso
 Navegación Básica
 Abrir carpeta: Toca cualquier carpeta
 
@@ -209,8 +201,8 @@ Agregar favoritos: Mantén presionado → "Agregar a favoritos"
 
 Ver recientes: Menú → "Archivos Recientes"
 
-📁 Estructura del Proyecto
-text
+## 📁 Estructura del Proyecto
+
 FileManagerApp/
 ├── 📱 App/
 │   ├── FileManagerApp.swift
@@ -263,12 +255,12 @@ FileManagerApp/
 
 
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 Martin Francisco Cortes Buendia
 
 
 
-🙏 Agradecimientos
+## 🙏 Agradecimientos
 IPN - Por los colores institucionales
 
 ESCOM - Inspiración para el tema azul
