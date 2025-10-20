@@ -203,55 +203,54 @@ Agregar favoritos: Mantén presionado → "Agregar a favoritos"
 Ver recientes: Menú → "Archivos Recientes"
 
 ## 📁 Estructura del Proyecto
-
-FileManagerApp/
-├── 📱 App/
-│   ├── FileManagerApp.swift
-│   └── ContentView.swift
-├── 🎯 Core/
-│   ├── Domain/
-│   │   ├── Entities/
-│   │   │   ├── FileItem.swift
-│   │   │   └── FileType.swift
-│   │   ├── Repositories/
-│   │   │   ├── FileRepositoryProtocol.swift
-│   │   │   ├── FavoritesRepositoryProtocol.swift
-│   │   │   └── RecentFilesRepositoryProtocol.swift
-│   │   └── UseCases/
-│   │       └── GetDirectoryContentsUseCase.swift
-│   └── Data/
-│       ├── Repositories/
-│       │   ├── LocalFileRepository.swift
-│       │   ├── UserDefaultsFavoritesRepository.swift
-│       │   └── UserDefaultsRecentFilesRepository.swift
-│       └── Models/
-├── 🎨 Presentation/
-│   ├── Views/
-│   │   ├── FileExplorerView.swift
-│   │   ├── FileItemView.swift
-│   │   ├── FolderContentView.swift
-│   │   ├── GridFileView.swift
-│   │   ├── ImageViewerView.swift
-│   │   ├── FileDetailView.swift
-│   │   └── Components/
-│   │       ├── FileBrowserHeader.swift
-│   │       ├── FileContextMenu.swift
-│   │       └── ThemePickerView.swift
-│   ├── ViewModels/
-│   │   ├── FileExplorerViewModel.swift
-│   │   ├── FavoritesViewModel.swift
-│   │   ├── RecentFilesViewModel.swift
-│   │   └── FileOperationsViewModel.swift
-│   └── Theme/
-│       ├── ThemeManager.swift
-│       └── AppTheme.swift
-├── 🛠️ Utils/
-│   ├── ThumbnailCache.swift
-│   ├── FileSharingViewModel.swift
-│   └── Extensions/
-└── 📄 Resources/
-    ├── Assets.xcassets
-    └── Info.plist
+    FileManagerApp/
+    ├── 📱 App/
+    │   ├── FileManagerApp.swift
+    │   └── ContentView.swift
+    ├── 🎯 Core/
+    │   ├── Domain/
+    │   │   ├── Entities/
+    │   │   │   ├── FileItem.swift
+    │   │   │   └── FileType.swift
+    │   │   ├── Repositories/
+    │   │   │   ├── FileRepositoryProtocol.swift
+    │   │   │   ├── FavoritesRepositoryProtocol.swift
+    │   │   │   └── RecentFilesRepositoryProtocol.swift
+    │   │   └── UseCases/
+    │   │       └── GetDirectoryContentsUseCase.swift
+    │   └── Data/
+    │       ├── Repositories/
+    │       │   ├── LocalFileRepository.swift
+    │       │   ├── UserDefaultsFavoritesRepository.swift
+    │       │   └── UserDefaultsRecentFilesRepository.swift
+    │       └── Models/
+    ├── 🎨 Presentation/
+    │   ├── Views/
+    │   │   ├── FileExplorerView.swift
+    │   │   ├── FileItemView.swift
+    │   │   ├── FolderContentView.swift
+    │   │   ├── GridFileView.swift
+    │   │   ├── ImageViewerView.swift
+    │   │   ├── FileDetailView.swift
+    │   │   └── Components/
+    │   │       ├── FileBrowserHeader.swift
+    │   │       ├── FileContextMenu.swift
+    │   │       └── ThemePickerView.swift
+    │   ├── ViewModels/
+    │   │   ├── FileExplorerViewModel.swift
+    │   │   ├── FavoritesViewModel.swift
+    │   │   ├── RecentFilesViewModel.swift
+    │   │   └── FileOperationsViewModel.swift
+    │   └── Theme/
+    │       ├── ThemeManager.swift
+    │       └── AppTheme.swift
+    ├── 🛠️ Utils/
+    │   ├── ThumbnailCache.swift
+    │   ├── FileSharingViewModel.swift
+    │   └── Extensions/
+    └── 📄 Resources/
+        ├── Assets.xcassets
+        └── Info.plist
 
 
 
