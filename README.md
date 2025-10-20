@@ -3,7 +3,8 @@
 Una aplicación moderna de gestión de archivos desarrollada en SwiftUI con arquitectura MVVM
 
 </div>
-## 📋 Tabla de Contenidos
+
+## 📋Tabla de Contenidos
 Características
 
 Capturas de Pantalla
